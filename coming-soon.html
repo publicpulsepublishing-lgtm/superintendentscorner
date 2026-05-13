@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="description" content="This page is coming soon. Visit Superintendent's Corner for the latest K-12 education news and school district spotlights.">
+<meta property="og:title" content="Coming Soon | Superintendent's Corner">
+<meta property="og:description" content="This page is coming soon. Visit Superintendent's Corner for the latest K-12 education news and school district spotlights.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Superintendent's Corner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coming Soon | Superintendent's Corner">
+<meta name="twitter:description" content="This page is coming soon. Visit Superintendent's Corner for the latest K-12 education news and school district spotlights.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon | Superintendent's Corner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0B2545;--gold:#C8962E;--gold-light:#E8B84B;--cream:#FAF8F4;--border:#D9D3C7;--text-mid:#4A4035;--text-muted:#7A7060;--white:#FFFFFF;--warm-gray:#F2EFE9;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:#1A1610;min-height:100vh;display:flex;flex-direction:column;}
+  header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 24px;max-width:1200px;margin:0 auto;height: 142px;}
+    .logo { display: flex; align-items: center; text-decoration: none; }
+  .logo-img { height: 122px; width: auto; display: block; }
+  nav{display:flex;align-items:center;gap:6px;}
+  nav a{font-size:13px;font-weight:500;color:var(--text-mid);text-decoration:none;padding:6px 14px;border-radius:3px;transition:all 0.2s;}
+  nav a:hover{color:var(--navy);background:var(--warm-gray);}
+  nav a.nav-cta{background:var(--gold);color:var(--white);font-weight:600;margin-left:8px;}
+  .main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px;}
+  .card{text-align:center;max-width:480px;}
+  .card-icon{width:72px;height:72px;background:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;}
+  .card-icon svg{width:40px;height:40px;}
+  .card h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+  .card p{font-size:15px;color:var(--text-muted);line-height:1.75;margin-bottom:28px;}
+  .card-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .card-link{padding:11px 24px;font-size:13px;font-weight:600;border-radius:3px;text-decoration:none;}
+  .card-link.primary{background:var(--navy);color:var(--white);}
+  .card-link.secondary{background:var(--white);color:var(--navy);border:1px solid var(--border);}
+
+  /* ── MOBILE RESPONSIVE ── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: all 0.3s; }
+
+  @media (max-width: 768px) {
+    .header-inner { padding: 0 16px; height: 142px; }
+    .hamburger { display: block; }
+    nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 12px 16px; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.08); z-index: 200; }
+    nav.open { display: flex; }
+    nav a { padding: 10px 8px; font-size: 14px; border-bottom: 1px solid #f0ede8; }
+    nav a:last-child { border-bottom: none; }
+    nav a.nav-cta { margin-left: 0; margin-top: 6px; text-align: center; }
+    .card h1 { font-size: 24px; }
+    .card-links { flex-direction: column; }
+    .card-link { text-align: center; }
+  }
+
+  .alert-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 12px; padding: 8px 0; text-align: center; letter-spacing: 0.02em; }
+  .alert-bar strong { color: var(--gold-light); }
+  .alert-bar a { color: var(--gold-light); text-decoration: none; }
+  .ticker-wrap { background: var(--navy); padding: 9px 0; overflow: hidden; }
+  .ticker-inner { display: flex; align-items: center; gap: 0; }
+  .ticker-badge { background: var(--gold); color: var(--navy); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; padding: 3px 12px; text-transform: uppercase; border-radius: 2px; white-space: nowrap; flex-shrink: 0; margin-left: 24px; z-index: 2; position: relative; }
+  .ticker-badge::after { content: ''; position: absolute; right: -12px; top: 0; bottom: 0; width: 12px; background: linear-gradient(to right, var(--gold), transparent); }
+  .ticker-track { display: flex; gap: 48px; white-space: nowrap; animation: ticker-scroll 40s linear infinite; padding-left: 48px; }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-track a { font-size: 12.5px; color: rgba(255,255,255,0.7); white-space: nowrap; text-decoration: none; transition: color 0.2s; flex-shrink: 0; }
+  .ticker-track a:hover { color: var(--gold-light); }
+  .ticker-track a::before { content: '◆ '; color: var(--gold); font-size: 8px; }
+  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+</style>
+</head>
+<body>
+<div class="alert-bar"><!-- ALERT_START -->
+  <strong>Breaking:</strong>&nbsp; Houston ISD moves to expand AI-focused schools to nine campuses &nbsp;·&nbsp;
+  <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Read the story →</a>
+<!-- ALERT_END -->
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Superintendent's Corner" class="logo-img">
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="news.html">News</a>
+      <a href="districts.html">Districts</a>
+      <a href="magazine.html">Magazine</a>
+      <a href="about.html">About</a>
+      <a href="advertise.html" class="nav-cta">Advertise</a>
+    </nav>
+  </div>
+</header>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-badge">Today's Stories</span>
+        <div class="ticker-track">
+      <!-- TICKER_START -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+      <!-- loop duplicate -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+          <!-- TICKER_END -->
+    </div>
+  </div>
+</div>
+
+
+<div class="main">
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 40 40" fill="none"><polygon points="20,5 38,14 20,23 2,14" fill="#C8962E"/><path d="M8 24 L8 33 L20 37 L32 33 L32 24" fill="none" stroke="#C8962E" stroke-width="2.5" stroke-linejoin="round"/></svg>
+    </div>
+    <h1>This Page Is Coming Soon</h1>
+    <p>We are still building out this part of the site. In the meantime, feel free to browse our news, explore the district directory, or get in touch if you have questions.</p>
+    <div class="card-links">
+      <a href="index.html" class="card-link primary">Back to Home</a>
+      <a href="about.html" class="card-link secondary">Contact Us</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

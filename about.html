@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="description" content="Superintendent's Corner is the digital publication built for K-12 education leaders and the suppliers who serve them. Learn about our mission, editorial standards, and how to get in touch.">
+<meta name="keywords" content="about superintendent corner, education publication, K-12 media, school district publication">
+<meta property="og:title" content="About Us | Superintendent's Corner">
+<meta property="og:description" content="Superintendent's Corner is the digital publication built for K-12 education leaders and the suppliers who serve them. Learn about our mission, editorial standards, and how to get in touch.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Superintendent's Corner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us | Superintendent's Corner">
+<meta name="twitter:description" content="Superintendent's Corner is the digital publication built for K-12 education leaders and the suppliers who serve them. Learn about our mission, editorial standards, and how to get in touch.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Superintendent's Corner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2545;
+    --navy-mid: #163660;
+    --navy-light: #1E4A82;
+    --gold: #C8962E;
+    --gold-light: #E8B84B;
+    --gold-pale: #FBF3E3;
+    --cream: #FAF8F4;
+    --warm-gray: #F2EFE9;
+    --border: #D9D3C7;
+    --text-dark: #1A1610;
+    --text-mid: #4A4035;
+    --text-muted: #7A7060;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* HEADER */
+  header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1200px; margin: 0 auto; height: 142px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+  .logo-img { height: 122px; width: auto; display: block; }
+  nav { display: flex; align-items: center; gap: 6px; }
+  nav a { font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 6px 14px; border-radius: 3px; transition: all 0.2s; }
+  nav a:hover { color: var(--navy); background: var(--warm-gray); }
+  nav a.active { color: var(--navy); font-weight: 600; }
+  nav a.nav-cta { background: var(--gold); color: var(--white); font-weight: 600; margin-left: 8px; }
+  nav a.nav-cta:hover { background: #b8841f; }
+
+  /* PAGE HERO */
+  .page-hero { background: var(--navy); padding: 64px 0 56px; position: relative; overflow: hidden; }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(45deg, rgba(200,150,46,0.04) 0px, rgba(200,150,46,0.04) 1px, transparent 1px, transparent 36px);
+  }
+  .page-hero-inner { position: relative; z-index: 1; }
+  .page-hero-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px; max-width: 640px; }
+  .page-hero h1 em { color: var(--gold); font-style: normal; }
+  .page-hero p { font-family: 'Source Serif 4', serif; font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 580px; }
+  .page-hero-rule { height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); margin-top: 48px; }
+
+  /* MISSION STATEMENT */
+  .mission-section { background: var(--white); padding: 64px 0; border-bottom: 1px solid var(--border); }
+  .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .mission-left h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 20px; letter-spacing: -0.02em; }
+  .mission-left p { font-family: 'Source Serif 4', serif; font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+  .mission-right { background: linear-gradient(rgba(11,37,69,0.92),rgba(11,37,69,0.95)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=500&fit=crop') center/cover; border-radius: 6px; padding: 36px; }
+  .mission-right blockquote { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--white); line-height: 1.55; margin-bottom: 20px; }
+  .mission-right blockquote::before { content: '\201C'; color: var(--gold); font-size: 52px; line-height: 0; vertical-align: -20px; margin-right: 4px; }
+  .mission-right cite { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.12em; text-transform: uppercase; font-style: normal; }
+
+  /* WHAT WE DO */
+  .what-section { background: var(--cream); padding: 64px 0; }
+  .what-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin: 14px 0 36px; }
+  .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .what-card { background: var(--white); border: 1px solid var(--border); border-radius: 5px; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .what-card-icon { width: 48px; height: 48px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .what-card-icon svg { width: 26px; height: 26px; }
+  .what-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--navy); }
+  .what-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; }
+  .what-card-accent { height: 3px; background: var(--gold); width: 36px; border-radius: 2px; margin-bottom: 2px; }
+
+  /* WHO WE SERVE */
+  .who-section { background: var(--white); padding: 64px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 36px; }
+  .who-col h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 2px solid var(--gold); }
+  .who-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .who-col ul li { font-size: 14px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 10px; line-height: 1.55; }
+  .who-col ul li::before { content: '→'; color: var(--gold); font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+
+  /* OUR STANDARDS */
+  .standards-section { background: var(--warm-gray); padding: 64px 0; }
+  .standards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 36px; }
+  .standard-item { display: flex; gap: 18px; padding: 22px; background: var(--white); border: 1px solid var(--border); border-radius: 5px; }
+  .standard-num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--border); line-height: 1; flex-shrink: 0; width: 40px; }
+  .standard-text h4 { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .standard-text p { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+  /* CONTACT */
+  .contact-section { background: var(--navy); padding: 64px 0; }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .contact-left h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+  .contact-left p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 32px; }
+  .contact-items { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; }
+  .contact-item-label { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .contact-item-val { font-size: 13px; color: var(--white); }
+  .contact-item-val a { color: var(--gold-light); text-decoration: none; }
+  .contact-item-val a:hover { text-decoration: underline; }
+  .contact-item-desc { font-size: 11.5px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+  .contact-item-icon { width: 36px; height: 36px; background: rgba(200,150,46,0.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-item-icon svg { width: 18px; height: 18px; }
+  .contact-right { padding-top: 8px; }
+  .contact-right h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+  .contact-right p { font-size: 13.5px; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 20px; }
+  .contact-cta-group { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+  .btn-gold-lg { background: var(--gold); color: var(--navy); padding: 13px 28px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; border-radius: 3px; text-decoration: none; display: inline-block; text-align: center; }
+  .btn-ghost-lg { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); padding: 13px 28px; font-size: 13px; font-weight: 500; border-radius: 3px; text-decoration: none; display: inline-block; text-align: center; }
+
+  /* FOOTER */
+  footer { background: #06172D; padding: 46px 0 26px; }
+  .footer-grid { display: grid; grid-template-columns: 240px 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+    .footer-logo { margin-bottom: 14px; }
+  .footer-logo-img { height: 48px; width: auto; background: white; border-radius: 4px; padding: 4px 10px; display: block; }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.42); line-height: 1.7; }
+  .footer-col h4 { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 9px; }
+  .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.48); text-decoration: none; transition: color 0.15s; }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.28); }
+  .footer-social { display: flex; gap: 14px; }
+  .footer-social a { font-size: 12px; color: rgba(255,255,255,0.36); text-decoration: none; }
+  .footer-social a:hover { color: var(--gold); }
+
+  /* ── MOBILE RESPONSIVE ── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: all 0.3s; }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 16px; }
+    .header-inner { padding: 0 16px; height: 142px; }
+    .hamburger { display: block; }
+    nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 12px 16px; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.08); z-index: 200; }
+    nav.open { display: flex; }
+    nav a { padding: 10px 8px; font-size: 14px; border-bottom: 1px solid #f0ede8; }
+    nav a:last-child { border-bottom: none; }
+    nav a.nav-cta { margin-left: 0; margin-top: 6px; text-align: center; }
+    .page-hero h1 { font-size: 28px; }
+    .page-hero { padding: 36px 0 36px; }
+    .mission-section { padding: 40px 0; }
+    .mission-grid { grid-template-columns: 1fr; gap: 28px; }
+    .mission-left h2 { font-size: 24px; }
+    .what-section h2 { font-size: 22px; }
+    .what-grid { grid-template-columns: 1fr; }
+    .who-grid { grid-template-columns: 1fr; gap: 32px; }
+    .standards-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 32px; }
+    .contact-left h2 { font-size: 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  .alert-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 12px; padding: 8px 0; text-align: center; letter-spacing: 0.02em; }
+  .alert-bar strong { color: var(--gold-light); }
+  .alert-bar a { color: var(--gold-light); text-decoration: none; }
+  .ticker-wrap { background: var(--navy); padding: 9px 0; overflow: hidden; }
+  .ticker-inner { display: flex; align-items: center; gap: 0; }
+  .ticker-badge { background: var(--gold); color: var(--navy); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; padding: 3px 12px; text-transform: uppercase; border-radius: 2px; white-space: nowrap; flex-shrink: 0; margin-left: 24px; z-index: 2; position: relative; }
+  .ticker-badge::after { content: ''; position: absolute; right: -12px; top: 0; bottom: 0; width: 12px; background: linear-gradient(to right, var(--gold), transparent); }
+  .ticker-track { display: flex; gap: 48px; white-space: nowrap; animation: ticker-scroll 40s linear infinite; padding-left: 48px; }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-track a { font-size: 12.5px; color: rgba(255,255,255,0.7); white-space: nowrap; text-decoration: none; transition: color 0.2s; flex-shrink: 0; }
+  .ticker-track a:hover { color: var(--gold-light); }
+  .ticker-track a::before { content: '◆ '; color: var(--gold); font-size: 8px; }
+  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="alert-bar"><!-- ALERT_START -->
+  <strong>Breaking:</strong>&nbsp; Houston ISD moves to expand AI-focused schools to nine campuses &nbsp;·&nbsp;
+  <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Read the story →</a>
+<!-- ALERT_END -->
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Superintendent's Corner" class="logo-img">
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="index.html">News</a>
+      <a href="districts.html">Districts</a>
+      <a href="magazine.html">Magazine</a>
+      <a href="about.html" class="active">About</a>
+      <a href="advertise.html" class="nav-cta">Advertise</a>
+    </nav>
+  </div>
+</header>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-badge">Today's Stories</span>
+        <div class="ticker-track">
+      <!-- TICKER_START -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+      <!-- loop duplicate -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+          <!-- TICKER_END -->
+    </div>
+  </div>
+</div>
+
+
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">About Superintendent's Corner</div>
+      <h1>A Publication Built for <em>Education Leaders</em> and the Partners Who Support Them</h1>
+      <p>Superintendent's Corner is a digital magazine and news platform focused entirely on American K-12 school districts. We cover the people running them, the challenges they deal with every day, and the suppliers and partners working alongside them.</p>
+    </div>
+  </div>
+  <div class="page-hero-rule"></div>
+</div>
+
+<!-- MISSION -->
+<div class="mission-section">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-left">
+        <h2>Why We Started Superintendent's Corner</h2>
+        <p>We started Superintendent's Corner because we felt school districts were being underserved by existing media. They deserved more than a small section in a general business publication or a few wire-service headlines repackaged as coverage.</p>
+        <p>Every month, we sit down with district leadership and dig into what is actually happening: the programs they are building, the facilities they are maintaining, the budgets they are managing, and the goals they are working toward. This is serious work. It deserves serious coverage.</p>
+        <p>Alongside our district spotlight editions, we pull together the most relevant K-12 news from around the country every day. Technology, safety, infrastructure, budgets, policy, leadership. If it matters to the people running school districts, we cover it.</p>
+      </div>
+      <div class="mission-right">
+        <blockquote>Our goal is to give American public education the publication it deserves, and to connect the leaders shaping it with the partners who help them do the job.</blockquote>
+        <cite>The Editors, Superintendent's Corner</cite>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="what-section">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2>What We Do</h2>
+    <div class="what-grid">
+
+      <div class="what-card">
+        <div class="what-card-accent"></div>
+        <div class="what-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C8962E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>District Spotlight Magazine</h3>
+        <p>Our monthly publication takes a close look at one or more school districts per issue. We cover leadership, strategy, facilities, technology, and the vendors the district relies on. The feature is editorial and in-depth.</p>
+      </div>
+
+      <div class="what-card">
+        <div class="what-card-accent"></div>
+        <div class="what-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C8962E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"/><path d="M8 2v4"/><path d="M16 2v4"/><line x1="4" y1="10" x2="20" y2="10"/>
+          </svg>
+        </div>
+        <h3>Daily K–12 News Curation</h3>
+        <p>Between editions, our website surfaces the most important stories in K–12 education from the country's most trusted outlets: Chalkbeat, Education Week, District Administration, and local public media. One place to stay current, updated daily.</p>
+      </div>
+
+      <div class="what-card">
+        <div class="what-card-accent"></div>
+        <div class="what-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C8962E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Supplier Advertising Platform</h3>
+        <p>We give the companies that work with school districts a direct line to the people making purchasing decisions. If you supply technology, construction services, food service, transportation, curriculum, or anything else to K-12 districts, our spotlight editions put you in front of the right audience.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WHO WE SERVE -->
+<div class="who-section">
+  <div class="container">
+    <div class="section-label">Our Audience</div>
+    <div class="who-grid">
+
+      <div class="who-col">
+        <h3>For School Districts</h3>
+        <ul>
+          <li>Superintendents who want their district's story told with depth and credibility</li>
+          <li>Assistant superintendents, chief academic officers, and cabinet leaders</li>
+          <li>School board members and district communications teams</li>
+          <li>Educators and administrators looking to stay current on national K–12 trends</li>
+          <li>State education agency leaders and association executives</li>
+          <li>Districts of all sizes, from large urban systems to smaller suburban and rural ones</li>
+        </ul>
+      </div>
+
+      <div class="who-col">
+        <h3>For Suppliers & Partners</h3>
+        <ul>
+          <li>Technology and EdTech companies serving K–12 districts</li>
+          <li>Construction, architecture, and facilities management firms</li>
+          <li>Food service and nutrition management companies</li>
+          <li>Transportation and fleet management suppliers</li>
+          <li>Curriculum, assessment, and professional development providers</li>
+          <li>Financial services, insurance, and legal firms serving public education</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EDITORIAL STANDARDS -->
+<div class="standards-section">
+  <div class="container">
+    <div class="section-label">Editorial Standards</div>
+    <div style="margin-top:14px; margin-bottom:36px;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy);">How We Work</h2>
+    </div>
+    <div class="standards-grid">
+
+      <div class="standard-item">
+        <div class="standard-num">01</div>
+        <div class="standard-text">
+          <h4>Districts Are Never Charged</h4>
+          <p>School districts featured in Superintendent's Corner are never asked to pay for their coverage. Our editorial features are earned, not bought. The district's story is told on its merits.</p>
+        </div>
+      </div>
+
+      <div class="standard-item">
+        <div class="standard-num">02</div>
+        <div class="standard-text">
+          <h4>Advertising Is Clearly Labeled</h4>
+          <p>Supplier advertisements are always clearly labeled. Our editorial content and our advertising content are kept strictly separate, no exceptions.</p>
+        </div>
+      </div>
+
+      <div class="standard-item">
+        <div class="standard-num">03</div>
+        <div class="standard-text">
+          <h4>News Is Attributed to Its Source</h4>
+          <p>When we curate news from other publications, we always credit the original reporter and publication, and link directly to the original article. We never present others' journalism as our own.</p>
+        </div>
+      </div>
+
+      <div class="standard-item">
+        <div class="standard-num">04</div>
+        <div class="standard-text">
+          <h4>We Let the District Speak for Itself</h4>
+          <p>Our district features are built around real conversations with district leadership, not press releases. We ask direct questions and let the superintendent's voice carry the story.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+  <div class="container">
+    <div class="contact-inner">
+
+      <div class="contact-left">
+        <h2>Get in Touch</h2>
+        <p>Whether you are a superintendent interested in a district spotlight, a supplier looking to reach education decision-makers, or a journalist with a tip, we want to hear from you.</p>
+        <div class="contact-items">
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8962E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">General Inquiries</div>
+              <div class="contact-item-val"><a href="mailto:info@superintendentscorner.com">info@superintendentscorner.com</a></div>
+              <div class="contact-item-desc">For general questions about the publication</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8962E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Editorial</div>
+              <div class="contact-item-val"><a href="mailto:editor@superintendentscorner.com">editor@superintendentscorner.com</a></div>
+              <div class="contact-item-desc">Story ideas, tips, and editorial feedback</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8962E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Advertising</div>
+              <div class="contact-item-val"><a href="mailto:advertise@superintendentscorner.com">advertise@superintendentscorner.com</a></div>
+              <div class="contact-item-desc">Supplier advertising and media kit requests</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#C8962E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">District Nominations</div>
+              <div class="contact-item-val"><a href="mailto:districts@superintendentscorner.com">districts@superintendentscorner.com</a></div>
+              <div class="contact-item-desc">Nominate a district for a spotlight feature</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <h3>Ready to Nominate Your District?</h3>
+        <p>Each edition is a full editorial profile covering leadership, strategy, innovation, facilities, and the vendors and partners behind the district.</p>
+        <p>If you are a superintendent, cabinet leader, or association executive and want your district featured in an upcoming edition, reach out. We will walk you through how it works.</p>
+        <p>If you are a supplier or industry partner looking to reach district decision-makers, ask us for our media kit and we will send it right over.</p>
+        <div class="contact-cta-group">
+          <a href="mailto:districts@superintendentscorner.com" class="btn-gold-lg">Nominate a District →</a>
+          <a href="mailto:advertise@superintendentscorner.com" class="btn-ghost-lg">Request Media Kit →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Superintendent's Corner" class="footer-logo-img">
+        </div>
+        </div>
+        <p>The premier digital platform spotlighting the people, programs, and partners driving public education forward across the United States.</p>
+      </div>
+      <div class="footer-col">
+        <h4>News</h4>
+        <ul>
+          <li><a href="news.html#tech">Technology &amp; AI</a></li>
+          <li><a href="news.html#infra">Infrastructure</a></li>
+          <li><a href="news.html#safety">School Safety</a></li>
+          <li><a href="news.html#budget">Budget &amp; Finance</a></li>
+          <li><a href="news.html#policy">Policy &amp; Legislation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Work With Us</h4>
+        <ul>
+          <li><a href="mailto:districts@superintendentscorner.com">Nominate a District</a></li>
+          <li><a href="advertise.html">Advertising Options</a></li>
+          <li><a href="mailto:advertise@superintendentscorner.com">Media Kit</a></li>
+          <li><a href="advertise.html">Supplier FAQ</a></li>
+          <li><a href="about.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Editorial Standards</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Superintendent's Corner · superintendentscorner.com · All Rights Reserved</p>
+      <div class="footer-social">
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter / X</a>
+        <a href="mailto:info@superintendentscorner.com">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

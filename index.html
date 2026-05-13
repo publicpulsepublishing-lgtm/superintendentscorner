@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="description" content="The digital magazine and news platform built for American school district leaders. Curated K-12 education news, a directory of 6,800+ districts, and in-depth district spotlight features.">
+<meta name="keywords" content="superintendent, school district, K-12 education, school district news, education leadership, school board, public schools, district spotlight">
+<meta property="og:title" content="Superintendent's Corner | K-12 School District News & Spotlights">
+<meta property="og:description" content="The digital magazine and news platform built for American school district leaders. Curated K-12 education news, a directory of 6,800+ districts, and in-depth district spotlight features.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Superintendent's Corner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Superintendent's Corner | K-12 School District News & Spotlights">
+<meta name="twitter:description" content="The digital magazine and news platform built for American school district leaders. Curated K-12 education news, a directory of 6,800+ districts, and in-depth district spotlight features.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Superintendent's Corner | K-12 School District News & Spotlights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2545;
+    --navy-mid: #163660;
+    --navy-light: #1E4A82;
+    --gold: #C8962E;
+    --gold-light: #E8B84B;
+    --gold-pale: #FBF3E3;
+    --cream: #FAF8F4;
+    --warm-gray: #F2EFE9;
+    --border: #D9D3C7;
+    --text-dark: #1A1610;
+    --text-mid: #4A4035;
+    --text-muted: #7A7060;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ALERT BAR */
+  .alert-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 12px; padding: 8px 0; text-align: center; letter-spacing: 0.02em; }
+  .alert-bar strong { color: var(--gold-light); }
+  .alert-bar a { color: var(--gold-light); text-decoration: none; }
+
+  /* HEADER */
+  header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1200px; margin: 0 auto; height: 142px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+  .logo-img { height: 122px; width: auto; display: block; }
+  nav { display: flex; align-items: center; gap: 6px; }
+  nav a { font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 6px 14px; border-radius: 3px; transition: all 0.2s; }
+  nav a:hover { color: var(--navy); background: var(--warm-gray); }
+  nav a.nav-cta { background: var(--gold); color: var(--white); font-weight: 600; margin-left: 8px; }
+  nav a.nav-cta:hover { background: #b8841f; }
+
+  /* TICKER */
+  .ticker-wrap { background: var(--navy); padding: 9px 0; overflow: hidden; }
+  .ticker-inner { display: flex; align-items: center; gap: 0; }
+  .ticker-badge { background: var(--gold); color: var(--navy); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; padding: 3px 12px; text-transform: uppercase; border-radius: 2px; white-space: nowrap; flex-shrink: 0; margin-left: 24px; z-index: 2; position: relative; }
+  .ticker-badge::after { content: ''; position: absolute; right: -12px; top: 0; bottom: 0; width: 12px; background: linear-gradient(to right, var(--gold), transparent); }
+  .ticker-track { display: flex; gap: 48px; white-space: nowrap; animation: ticker-scroll 40s linear infinite; padding-left: 48px; }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-track a { font-size: 12.5px; color: rgba(255,255,255,0.7); white-space: nowrap; text-decoration: none; transition: color 0.2s; flex-shrink: 0; }
+  .ticker-track a:hover { color: var(--gold-light); }
+  .ticker-track a::before { content: '◆ '; color: var(--gold); font-size: 8px; }
+  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* HERO */
+  .hero { background: var(--white); padding: 40px 0 0; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 360px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .hero-main { display: flex; flex-direction: column; }
+  .hero-image { height: 300px; background: linear-gradient(135deg, rgba(11,37,69,0.65) 0%, rgba(22,54,96,0.7) 50%, rgba(30,74,130,0.6) 100%), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&h=500&fit=crop') center/cover no-repeat; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .hero-image-link:hover .hero-image { filter: brightness(1.1); }
+  .hero-image-pattern { position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(200,150,46,0.05) 0px, rgba(200,150,46,0.05) 1px, transparent 1px, transparent 36px); }
+  .hero-image svg { width: 160px; height: 160px; opacity: 0.07; position: relative; }
+  .hero-topic-pill { position: absolute; top: 18px; left: 18px; background: var(--gold); color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; padding: 4px 12px; text-transform: uppercase; border-radius: 2px; }
+  .hero-source-tag { position: absolute; bottom: 18px; left: 18px; background: rgba(11,37,69,0.82); border: 1px solid rgba(200,150,46,0.25); border-radius: 4px; padding: 8px 14px; }
+  .hero-source-tag strong { color: var(--white); display: block; font-size: 12px; }
+  .hero-source-tag span { font-size: 11px; color: rgba(255,255,255,0.55); }
+  .hero-content { padding: 26px 30px 30px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .hero-content .section-label { font-size: 10px; }
+  .hero-headline { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1.22; letter-spacing: -0.02em; }
+  .hero-deck { font-family: 'Source Serif 4', serif; font-size: 15px; color: var(--text-mid); line-height: 1.7; flex: 1; }
+  .hero-meta { display: flex; align-items: center; gap: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
+  .hero-meta span { font-size: 12px; color: var(--text-muted); }
+  .hero-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border); }
+  .read-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--navy); color: var(--white); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 9px 18px; border-radius: 3px; text-decoration: none; width: fit-content; transition: background 0.2s; }
+  .read-btn:hover { background: var(--navy-light); }
+
+  /* SIDEBAR */
+  .hero-sidebar { border-left: 1px solid var(--border); display: flex; flex-direction: column; }
+  .sidebar-header { padding: 16px 18px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .sidebar-header h3 { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: var(--navy); }
+  .sidebar-header span { font-size: 10px; color: var(--text-muted); font-style: italic; }
+  .sidebar-story { display: flex; flex-direction: column; gap: 6px; padding: 15px 18px; border-bottom: 1px solid var(--border); text-decoration: none; transition: background 0.15s; }
+  .sidebar-story:last-child { border-bottom: none; }
+  .sidebar-story:hover { background: var(--warm-gray); }
+  .sidebar-tag { font-size: 9.5px; font-weight: 700; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; }
+  .sidebar-title { font-family: 'Playfair Display', serif; font-size: 13.5px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .sidebar-byline { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+  .sidebar-byline .dot { width: 2px; height: 2px; border-radius: 50%; background: var(--border); }
+
+  /* MAIN CONTENT */
+  .main-content { padding: 44px 0; }
+  .content-grid { display: grid; grid-template-columns: 1fr 300px; gap: 48px; }
+  .articles-header { margin-bottom: 22px; }
+  .articles-header h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-top: 10px; }
+  .articles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .article-card { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
+  .article-card:hover { box-shadow: 0 5px 20px rgba(11,37,69,0.09); transform: translateY(-2px); }
+  .article-card-color { height: 8px; }
+  .article-card-color.teal   { background: #0E6B78; }
+  .article-card-color.rust   { background: #8B3A2A; }
+  .article-card-color.forest { background: #2A5C3F; }
+  .article-card-color.indigo { background: #3B3D8C; }
+  .article-card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .article-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); }
+  .article-title { font-family: 'Playfair Display', serif; font-size: 15.5px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .article-excerpt { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .article-footer { display: flex; justify-content: space-between; align-items: center; padding: 11px 18px; border-top: 1px solid var(--border); }
+  .article-source { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+  .article-link { font-size: 11px; font-weight: 600; color: var(--gold); }
+
+  /* SIDEBAR WIDGETS */
+  .sidebar-widget { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; margin-bottom: 22px; }
+  .widget-header { padding: 13px 18px; border-bottom: 1px solid var(--border); background: var(--warm-gray); }
+  .widget-header h3 { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+  .newsletter-widget { background: var(--navy); border-radius: 5px; padding: 22px 18px; margin-bottom: 22px; }
+  .newsletter-widget h3 { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 7px; }
+  .newsletter-widget p { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-bottom: 14px; line-height: 1.6; }
+  .newsletter-widget input { width: 100%; padding: 9px 12px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: var(--white); border-radius: 3px; font-size: 13px; font-family: 'DM Sans', sans-serif; margin-bottom: 9px; outline: none; }
+  .newsletter-widget input::placeholder { color: rgba(255,255,255,0.3); }
+  .newsletter-widget button { width: 100%; padding: 10px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 12px; letter-spacing: 0.06em; border: none; border-radius: 3px; cursor: pointer; }
+  .advertise-widget { background: var(--gold-pale); border: 1px solid rgba(200,150,46,0.25); border-radius: 5px; padding: 20px 18px; margin-bottom: 22px; }
+  .advertise-widget h3 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--navy); margin-bottom: 8px; }
+  .advertise-widget p { font-size: 12.5px; color: var(--text-mid); margin-bottom: 13px; line-height: 1.65; }
+  .advertise-widget a { display: block; text-align: center; padding: 10px; background: var(--navy); color: var(--white); font-size: 12px; font-weight: 600; letter-spacing: 0.05em; border-radius: 3px; text-decoration: none; }
+  .topic-list { list-style: none; }
+  .topic-list li { display: flex; justify-content: space-between; align-items: center; padding: 8px 18px; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .topic-list li:last-child { border-bottom: none; }
+  .topic-list li a { color: var(--text-mid); text-decoration: none; }
+  .topic-list li a:hover { color: var(--navy); }
+  .topic-count { font-size: 11px; color: var(--text-muted); background: var(--warm-gray); padding: 2px 8px; border-radius: 10px; }
+
+  /* COMING SOON */
+  .coming-soon { background: var(--navy); padding: 52px 0; }
+  .coming-soon-inner { display: flex; align-items: center; gap: 56px; }
+  .coming-soon-text { flex: 1; }
+  .coming-soon-text .section-label { color: var(--gold-light); }
+  .coming-soon-text .section-label::after { background: rgba(255,255,255,0.12); }
+  .coming-soon-text h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--white); margin: 12px 0; line-height: 1.25; }
+  .coming-soon-text p { font-size: 14.5px; color: rgba(255,255,255,0.62); line-height: 1.75; }
+  .coming-soon-cta { display: flex; gap: 12px; margin-top: 22px; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 11px 24px; font-size: 13px; font-weight: 700; border-radius: 3px; text-decoration: none; }
+  .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); padding: 11px 24px; font-size: 13px; font-weight: 500; border-radius: 3px; text-decoration: none; }
+  .coming-soon-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(200,150,46,0.3); border-radius: 6px; padding: 28px; min-width: 290px; }
+  .coming-soon-card .card-eyebrow { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+  .coming-soon-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); margin-bottom: 10px; line-height: 1.35; }
+  .coming-soon-card p { font-size: 12px; color: rgba(255,255,255,0.42); }
+
+  /* CTA BAND */
+  .cta-band { background: var(--gold); padding: 38px 0; }
+  .cta-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+  .cta-text h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+  .cta-text p { font-size: 13.5px; color: rgba(11,37,69,0.72); }
+  .cta-buttons { display: flex; gap: 12px; flex-shrink: 0; }
+  .btn-dark { background: var(--navy); color: var(--white); padding: 11px 22px; font-size: 13px; font-weight: 600; border-radius: 3px; text-decoration: none; }
+  .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 11px 22px; font-size: 13px; font-weight: 600; border-radius: 3px; text-decoration: none; }
+
+  /* FOOTER */
+  footer { background: #06172D; padding: 46px 0 26px; }
+  .footer-grid { display: grid; grid-template-columns: 240px 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+    .footer-logo { margin-bottom: 14px; }
+  .footer-logo-img { height: 48px; width: auto; background: white; border-radius: 4px; padding: 4px 10px; display: block; }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.42); line-height: 1.7; }
+  .footer-col h4 { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 9px; }
+  .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.48); text-decoration: none; transition: color 0.15s; }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.28); }
+  .footer-social { display: flex; gap: 14px; }
+  .footer-social a { font-size: 12px; color: rgba(255,255,255,0.36); text-decoration: none; }
+  .footer-social a:hover { color: var(--gold); }
+
+  /* ── MOBILE RESPONSIVE ── */
+
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: all 0.3s; }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 16px; }
+    .header-inner { padding: 0 16px; height: 142px; }
+    .hamburger { display: block; }
+    nav { display: none; position: absolute; top: 142px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 12px 16px; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.08); z-index: 200; }
+    nav.open { display: flex; }
+    nav a { padding: 10px 8px; font-size: 14px; border-bottom: 1px solid #f0ede8; }
+    nav a:last-child { border-bottom: none; }
+    nav a.nav-cta { margin-left: 0; margin-top: 6px; text-align: center; }
+    .alert-bar { font-size: 11px; padding: 6px 16px; }
+    .ticker-wrap { display: none; }
+    .hero { padding: 20px 0 0; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-image { height: 200px; }
+    .hero-headline { font-size: 22px; }
+    .hero-deck { font-size: 13px; }
+    .hero-content { padding: 18px 20px 22px; }
+    .hero-sidebar { border-left: none; border-top: 1px solid var(--border); }
+    .sidebar-story { padding: 12px 16px; }
+    .sidebar-title { font-size: 12.5px; }
+    .hero-meta { flex-wrap: wrap; gap: 6px; }
+    .hero-source-tag { padding: 6px 10px; }
+    .hero-source-tag strong { font-size: 11px; }
+    .content-grid { grid-template-columns: 1fr; gap: 28px; }
+    .articles-grid { grid-template-columns: 1fr; }
+    .article-card-img { height: 100px !important; }
+    .articles-header h2 { font-size: 18px; }
+    .coming-soon-inner { flex-direction: column; gap: 24px; }
+    .coming-soon-text h2 { font-size: 22px; }
+    .coming-soon-card { min-width: unset; }
+    .coming-soon-cta { flex-direction: column; }
+    .cta-inner { flex-direction: column; text-align: center; gap: 16px; }
+    .cta-text h2 { font-size: 18px; }
+    .cta-buttons { justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .newsletter-widget { padding: 18px 14px; }
+    .topic-list li { padding: 8px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ALERT BAR -->
+<div class="alert-bar"><!-- ALERT_START -->
+  <strong>Breaking:</strong>&nbsp; Houston ISD moves to expand AI-focused schools to nine campuses &nbsp;·&nbsp;
+  <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Read the story →</a>
+<!-- ALERT_END --></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Superintendent's Corner" class="logo-img">
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="news.html">News</a>
+      <a href="districts.html">Districts</a>
+      <a href="magazine.html">Magazine</a>
+      <a href="about.html">About</a>
+      <a href="advertise.html" class="nav-cta">Advertise</a>
+    </nav>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-badge">Today's Stories</span>
+        <div class="ticker-track">
+      <!-- TICKER_START -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+      <!-- loop duplicate -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+          <!-- TICKER_END -->
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- LEAD STORY -->
+      <!-- HERO_LEAD_START -->
+      <div class="hero-main">
+        <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank" style="text-decoration:none;display:block;" class="hero-image-link">
+        <div class="hero-image">
+          <div class="hero-image-pattern"></div>
+          <div class="hero-topic-pill">Technology · Breaking</div>
+          <div style="position:absolute;bottom:6px;right:12px;font-size:8px;color:rgba(255,255,255,0.3);">Photo: Unsplash / MChe Lee</div>
+          <div class="hero-source-tag">
+            <strong>Houston Public Media</strong>
+            <span>April 29, 2026</span>
+          </div>
+        </div>
+        </a>
+        <div class="hero-content">
+          <div class="section-label">Lead Story</div>
+          <h1 class="hero-headline">Houston ISD to Transform Nine Campuses Into AI-Focused Schools</h1>
+          <p class="hero-deck">Superintendent Mike Miles is expanding the district's "Future 2" concept to nine campuses, with a focus on critical thinking, real-world problem solving, and technology readiness. All nine schools serve predominantly low-income and minority students. They would run on extended hours and receive $4.5 million from the proposed 2026-27 budget. Some board members have raised concerns about how fast the program is growing and what that means for students.</p>
+          <div class="hero-meta">
+            <span>Houston Public Media</span>
+            <div class="dot"></div>
+            <span>April 29, 2026</span>
+            <div class="dot"></div>
+            <span>Houston ISD, TX</span>
+          </div>
+          <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank" class="read-btn">Read Full Story at Houston Public Media →</a>
+        </div>
+      <!-- HERO_LEAD_END -->
+
+      </div>
+
+      <!-- SIDEBAR STORIES -->
+      <!-- HERO_SIDEBAR_START -->
+      <div class="hero-sidebar">
+        <div class="sidebar-header">
+          <h3>More Stories</h3>
+          <span>Updated daily</span>
+        </div>
+
+        <a href="https://projects.chalkbeat.org/2026/ed-tech-marketing-emails-bombard-superintendents/" target="_blank" class="sidebar-story">
+          <span class="sidebar-tag">Leadership</span>
+          <span class="sidebar-title">How the AI-Enabled Race for Taxpayer Money Starts in a Superintendent's Inbox</span>
+          <div class="sidebar-byline"><span>Chalkbeat</span><div class="dot"></div><span>Apr 29, 2026</span></div>
+        </a>
+
+        <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank" class="sidebar-story">
+          <span class="sidebar-tag">Infrastructure</span>
+          <span class="sidebar-title">Detroit District Weighs $79.4M Plan to Tackle Long-Needed Infrastructure Improvements</span>
+          <div class="sidebar-byline"><span>Chalkbeat Detroit</span><div class="dot"></div><span>Feb 2, 2026</span></div>
+        </a>
+
+        <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank" class="sidebar-story">
+          <span class="sidebar-tag">Facilities &amp; Bonds</span>
+          <span class="sidebar-title">Washington School Districts Make Final Push for $200M Facility Bond Vote</span>
+          <div class="sidebar-byline"><span>KXLY News</span><div class="dot"></div><span>Apr 28, 2026</span></div>
+        </a>
+
+        <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank" class="sidebar-story">
+          <span class="sidebar-tag">School Safety</span>
+          <span class="sidebar-title">Texas Superintendent: State Safety Funding Mandate Still Falls Short of Real Costs</span>
+          <div class="sidebar-byline"><span>Spectrum Local News</span><div class="dot"></div><span>Apr 21, 2026</span></div>
+        </a>
+
+        <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank" class="sidebar-story">
+          <span class="sidebar-tag">Policy &amp; Legislation</span>
+          <span class="sidebar-title">Congress Reintroduces Bill to Finance Public School Repairs via Federal Tax Code</span>
+          <div class="sidebar-byline"><span>House.gov</span><div class="dot"></div><span>Apr 27, 2026</span></div>
+        </a>
+      </div>
+      <!-- HERO_SIDEBAR_END -->
+
+    </div>
+  </div>
+  <div style="height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin-top:40px;"></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+  <div class="container">
+    <div class="content-grid">
+
+      <div>
+        <div class="articles-header">
+          <div class="section-label">Around the Nation</div>
+          <h2>More From the World of K–12 Education</h2>
+        </div>
+        <div class="articles-grid">
+          <!-- ARTICLES_START -->
+
+          <a href="https://projects.chalkbeat.org/2026/ed-tech-marketing-emails-bombard-superintendents/" target="_blank" class="article-card">
+            <div class="article-card-img" style="height:140px;background:linear-gradient(rgba(14,107,120,0.6),rgba(14,107,120,0.75)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=280&fit=crop') center/cover;"></div>
+            <div class="article-card-body">
+              <div class="article-tag">Leadership</div>
+              <div class="article-title">How the AI-Enabled Race for Taxpayer Money Starts in a Superintendent's Inbox</div>
+              <p class="article-excerpt">Ed-tech vendors are flooding superintendents with hundreds of unsolicited pitches weekly. Five superintendents shared what lands in their inbox in a single day, exposing a largely unregulated industry racing to capture school budgets as pandemic relief funds dry up.</p>
+            </div>
+            <div class="article-footer">
+              <span class="article-source">Chalkbeat · Apr 29, 2026</span>
+              <span class="article-link">Read →</span>
+            </div>
+          </a>
+
+          <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank" class="article-card">
+            <div class="article-card-img" style="height:140px;background:linear-gradient(rgba(139,58,42,0.6),rgba(139,58,42,0.75)),url('https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=280&fit=crop') center/cover;"></div>
+            <div class="article-card-body">
+              <div class="article-tag">Infrastructure</div>
+              <div class="article-title">Detroit District Weighs $79.4 Million Plan to Tackle Long-Needed Infrastructure Improvements</div>
+              <p class="article-excerpt">Detroit Public Schools Community District is considering surplus funds for demolishing 11 vacant buildings, building an athletic complex, repaving 36 parking lots, and improving security fencing at 28 schools.</p>
+            </div>
+            <div class="article-footer">
+              <span class="article-source">Chalkbeat Detroit · Feb 2, 2026</span>
+              <span class="article-link">Read →</span>
+            </div>
+          </a>
+
+          <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank" class="article-card">
+            <div class="article-card-img" style="height:140px;background:linear-gradient(rgba(42,92,63,0.6),rgba(42,92,63,0.75)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&h=280&fit=crop') center/cover;"></div>
+            <div class="article-card-body">
+              <div class="article-tag">School Safety</div>
+              <div class="article-title">Texas School District Officials Say State Safety Funding Still Falls Short</div>
+              <p class="article-excerpt">Northside ISD Superintendent John Craft says per-student safety funding mandated under HB 3 doesn't cover the real costs of armed officers, fencing, vestibules, and door monitoring across a district of more than 90,000 students.</p>
+            </div>
+            <div class="article-footer">
+              <span class="article-source">Spectrum Local News · Apr 21, 2026</span>
+              <span class="article-link">Read →</span>
+            </div>
+          </a>
+
+          <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank" class="article-card">
+            <div class="article-card-img" style="height:140px;background:linear-gradient(rgba(59,45,130,0.6),rgba(59,45,130,0.75)),url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&h=280&fit=crop') center/cover;"></div>
+            <div class="article-card-body">
+              <div class="article-tag">Policy &amp; Legislation</div>
+              <div class="article-title">Congressman Reintroduces Bill to Finance Public School Repairs via Federal Tax Code</div>
+              <p class="article-excerpt">Rep. Dwight Evans (D-PA) is pushing to let aging public school buildings qualify for the federal historic rehabilitation tax credit, aiming to help close the estimated $85 billion annual gap in school infrastructure funding.</p>
+            </div>
+            <div class="article-footer">
+              <span class="article-source">House.gov · Apr 27, 2026</span>
+              <span class="article-link">Read →</span>
+            </div>
+          </a>
+          <!-- ARTICLES_END -->
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="newsletter-widget">
+          <h3>Stay Informed</h3>
+          <p>The latest K–12 news and district spotlights, delivered twice monthly to your inbox.</p>
+          <input type="email" placeholder="Your email address">
+          <button>Subscribe to the Corner →</button>
+        </div>
+
+        <div class="advertise-widget">
+          <h3>Reach District Decision Makers</h3>
+          <p>Superintendent's Corner connects suppliers directly with school district leadership. If your company works with K-12 districts, we can put you in front of the right people.</p>
+          <a href="advertise.html">Learn About Advertising →</a>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header"><h3>Browse by Topic</h3></div>
+          <ul class="topic-list">
+            <li><a href="news.html#tech">Technology &amp; AI</a><span class="topic-count">12</span></li>
+            <li><a href="news.html#infra">Infrastructure &amp; Facilities</a><span class="topic-count">9</span></li>
+            <li><a href="news.html#safety">School Safety</a><span class="topic-count">8</span></li>
+            <li><a href="news.html#budget">Budget &amp; Finance</a><span class="topic-count">11</span></li>
+            <li><a href="news.html#policy">Policy &amp; Legislation</a><span class="topic-count">7</span></li>
+            <li><a href="news.html#leadership">Leadership &amp; Staffing</a><span class="topic-count">10</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- COMING SOON: DISTRICT SPOTLIGHTS -->
+<div class="coming-soon">
+  <div class="container">
+    <div class="coming-soon-inner">
+      <div class="coming-soon-text">
+        <div class="section-label">District Spotlights</div>
+        <h2>In-Depth Features on America's Leading School Districts. Coming Soon.</h2>
+        <p>Superintendent's Corner is launching its flagship district spotlight series. Each edition takes a close look at one school district: its leadership, its challenges, its suppliers, and where it's headed. If you'd like to nominate your district or just want to learn more, reach out and we'll be in touch.</p>
+        <div class="coming-soon-cta">
+          <a href="mailto:districts@superintendentscorner.com" class="btn-gold">Nominate a District</a>
+          <a href="about.html" class="btn-ghost">Learn More</a>
+        </div>
+      </div>
+      <div class="coming-soon-card" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1523050854058-8df90110c476?w=500&h=400&fit=crop') center/cover;border:none;">
+        <div class="card-eyebrow">First Edition · Coming Soon</div>
+        <h3>Your District Could Be Featured Here</h3>
+        <p style="color:rgba(255,255,255,0.6);">Spotlights launching soon</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Are You a Supplier to a School District?</h2>
+      <p>Our district spotlight editions are read by the people who make purchasing decisions. If you sell to school districts, let's talk.</p>
+    </div>
+    <div class="cta-buttons">
+      <a href="advertise.html" class="btn-dark">Advertising Inquiries</a>
+      <a href="mailto:advertise@superintendentscorner.com" class="btn-outline">View Media Kit</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Superintendent's Corner" class="footer-logo-img">
+        </div>
+        </div>
+        <p>The premier digital platform spotlighting the people, programs, and partners driving public education forward across the United States.</p>
+      </div>
+      <div class="footer-col">
+        <h4>News</h4>
+        <ul>
+          <li><a href="news.html#tech">Technology &amp; AI</a></li>
+          <li><a href="news.html#infra">Infrastructure</a></li>
+          <li><a href="news.html#safety">School Safety</a></li>
+          <li><a href="news.html#budget">Budget &amp; Finance</a></li>
+          <li><a href="news.html#policy">Policy &amp; Legislation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Work With Us</h4>
+        <ul>
+          <li><a href="mailto:districts@superintendentscorner.com">Nominate a District</a></li>
+          <li><a href="advertise.html">Advertising Options</a></li>
+          <li><a href="mailto:advertise@superintendentscorner.com">Media Kit</a></li>
+          <li><a href="advertise.html">Supplier FAQ</a></li>
+          <li><a href="about.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Editorial Standards</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Superintendent's Corner · superintendentscorner.com · All Rights Reserved</p>
+      <div class="footer-social">
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter / X</a>
+        <a href="mailto:info@superintendentscorner.com">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

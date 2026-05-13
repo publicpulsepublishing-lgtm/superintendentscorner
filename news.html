@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="description" content="The latest news affecting school districts across America. Budget and finance, technology, school safety, infrastructure, policy, and leadership stories updated regularly.">
+<meta name="keywords" content="K-12 news, school district budget, education technology, school safety, education policy, superintendent news">
+<meta property="og:title" content="K-12 Education News | Superintendent's Corner">
+<meta property="og:description" content="The latest news affecting school districts across America. Budget and finance, technology, school safety, infrastructure, policy, and leadership stories updated regularly.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Superintendent's Corner">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="K-12 Education News | Superintendent's Corner">
+<meta name="twitter:description" content="The latest news affecting school districts across America. Budget and finance, technology, school safety, infrastructure, policy, and leadership stories updated regularly.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-12 Education News | Superintendent's Corner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2545; --navy-mid: #163660; --navy-light: #1E4A82;
+    --gold: #C8962E; --gold-light: #E8B84B; --gold-pale: #FBF3E3;
+    --cream: #FAF8F4; --warm-gray: #F2EFE9; --border: #D9D3C7;
+    --text-dark: #1A1610; --text-mid: #4A4035; --text-muted: #7A7060; --white: #FFFFFF;
+    --tag-budget: #7B3F00; --tag-tech: #0E4A8C; --tag-safety: #5A1A1A;
+    --tag-policy: #2A4A2A; --tag-infra: #3A2A6A; --tag-leader: #4A3A00;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* HEADER */
+  header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1200px; margin: 0 auto; height: 142px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+  .logo-img { height: 122px; width: auto; display: block; }
+  nav { display: flex; align-items: center; gap: 6px; }
+  nav a { font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 6px 14px; border-radius: 3px; transition: all 0.2s; }
+  nav a:hover { color: var(--navy); background: var(--warm-gray); }
+  nav a.active { color: var(--navy); font-weight: 600; }
+  nav a.nav-cta { background: var(--gold); color: var(--white); font-weight: 600; margin-left: 8px; }
+  nav a.nav-cta:hover { background: #b8841f; }
+
+  /* PAGE HERO */
+  .page-hero { background: var(--navy); padding: 40px 0 0; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(200,150,46,0.04) 0px, rgba(200,150,46,0.04) 1px, transparent 1px, transparent 36px); pointer-events: none; }
+  .page-hero-top { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 28px; }
+  .page-hero-left h1 { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--white); letter-spacing: -0.02em; margin-bottom: 6px; }
+  .page-hero-left p { font-size: 14px; color: rgba(255,255,255,0.55); }
+  .page-hero-left p strong { color: var(--gold-light); }
+  .hero-date { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; }
+
+  /* TOPIC FILTER BAR */
+  .filter-bar { background: rgba(0,0,0,0.25); border-top: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 10; }
+  .filter-inner { display: flex; align-items: center; gap: 8px; padding: 12px 24px; max-width: 1200px; margin: 0 auto; overflow-x: auto; flex-wrap: wrap; }
+  .filter-link { padding: 9px 20px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); white-space: nowrap; letter-spacing: 0.04em; transition: all 0.2s; display: inline-block; border: 1px solid rgba(255,255,255,0.18); border-radius: 22px; background: rgba(255,255,255,0.06); cursor: pointer; font-family: 'DM Sans', sans-serif; outline: none; }
+  .filter-link:hover { color: var(--white); background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.35); }
+  .filter-link.active { color: #0B2545; background: #C8962E; border-color: #C8962E; font-weight: 700; }
+
+  /* MAIN LAYOUT */
+  .news-layout { padding: 40px 0 60px; }
+  .news-grid { display: grid; grid-template-columns: 1fr 320px; gap: 44px; }
+
+  /* LEAD STORY */
+  .lead-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .lead-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .lead-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 32px; text-decoration: none; transition: box-shadow 0.2s; }
+  .lead-card:hover { box-shadow: 0 6px 28px rgba(11,37,69,0.1); }
+  .lead-img { background: linear-gradient(145deg, #0B2545 0%, #163660 60%, #1E4A82 100%); min-height: 280px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .lead-img::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(200,150,46,0.05) 0px, rgba(200,150,46,0.05) 1px, transparent 1px, transparent 28px); }
+  .lead-img svg { width: 80px; height: 80px; opacity: 0.1; }
+  .lead-img-tag { position: absolute; top: 16px; left: 16px; }
+  .lead-img-source { position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(11,37,69,0.8); border: 1px solid rgba(200,150,46,0.2); border-radius: 3px; padding: 8px 12px; }
+  .lead-img-source strong { display: block; font-size: 12px; color: var(--white); }
+  .lead-img-source span { font-size: 10px; color: rgba(255,255,255,0.5); }
+  .lead-body { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .lead-body h2 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--navy); line-height: 1.25; }
+  .lead-body p { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--text-mid); line-height: 1.7; flex: 1; }
+  .lead-meta { display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .lead-meta span { font-size: 11px; color: var(--text-muted); }
+  .lead-read { font-size: 11px; font-weight: 600; color: var(--gold); margin-left: auto; }
+
+  /* SECTION HEADING */
+  .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .section-head h2 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy); }
+  .section-head a { font-size: 11px; font-weight: 600; color: var(--gold); text-decoration: none; }
+  .section-rule { height: 2px; background: var(--gold); width: 36px; margin-bottom: 16px; }
+
+  /* ARTICLE CARD GRID */
+  .articles-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+  .articles-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+
+  .art-card { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.15s; }
+  .art-card:hover { box-shadow: 0 4px 18px rgba(11,37,69,0.09); transform: translateY(-2px); }
+  .art-card-stripe { height: 4px; }
+  .stripe-budget { background: #7B3F00; }
+  .stripe-tech { background: #0E4A8C; }
+  .stripe-safety { background: #8B1A1A; }
+  .stripe-policy { background: #2A5C3F; }
+  .stripe-infra { background: #3A2A7A; }
+  .stripe-leader { background: #5A4A00; }
+  .art-card-img { background-size: cover; background-position: center; }
+  .art-card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 7px; }
+  .art-tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .tag-budget { color: #7B3F00; } .tag-tech { color: #0E4A8C; } .tag-safety { color: #8B1A1A; }
+  .tag-policy { color: #2A5C3F; } .tag-infra { color: #3A2A7A; } .tag-leader { color: #5A4A00; }
+  .art-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .art-excerpt { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .art-footer { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-top: 1px solid var(--border); }
+  .art-source { font-size: 10.5px; color: var(--text-muted); font-weight: 500; }
+  .art-link { font-size: 10.5px; font-weight: 600; color: var(--gold); }
+
+  /* LIST STYLE CARDS */
+  .art-list { display: flex; flex-direction: column; gap: 1px; margin-bottom: 36px; background: var(--border); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; }
+  .art-list-item { background: var(--white); padding: 14px 18px; text-decoration: none; display: flex; gap: 14px; align-items: flex-start; transition: background 0.15s; }
+  .art-list-item:hover { background: var(--warm-gray); }
+  .art-list-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--border); line-height: 1; flex-shrink: 0; width: 28px; padding-top: 2px; }
+  .art-list-body h4 { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 4px; }
+  .art-list-body .art-tag { display: inline-block; margin-bottom: 4px; }
+  .art-list-meta { font-size: 11px; color: var(--text-muted); display: flex; gap: 8px; }
+
+  /* SIDEBAR */
+  .sidebar { display: flex; flex-direction: column; gap: 22px; }
+  .sidebar-widget { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; }
+  .widget-head { padding: 13px 18px; border-bottom: 1px solid var(--border); background: var(--warm-gray); }
+  .widget-head h3 { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+  .newsletter-widget { background: var(--navy); border-radius: 5px; padding: 22px 18px; }
+  .newsletter-widget h3 { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); margin-bottom: 7px; }
+  .newsletter-widget p { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-bottom: 14px; line-height: 1.6; }
+  .newsletter-widget input { width: 100%; padding: 9px 12px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: var(--white); border-radius: 3px; font-size: 13px; font-family: 'DM Sans', sans-serif; margin-bottom: 9px; outline: none; }
+  .newsletter-widget input::placeholder { color: rgba(255,255,255,0.3); }
+  .newsletter-widget button { width: 100%; padding: 10px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 12px; border: none; border-radius: 3px; cursor: pointer; }
+  .topic-list { list-style: none; }
+  .topic-list li { display: flex; justify-content: space-between; align-items: center; padding: 9px 18px; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .topic-list li:last-child { border-bottom: none; }
+  .topic-list li a { color: var(--text-mid); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .topic-list li a:hover { color: var(--navy); }
+  .topic-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .topic-count { font-size: 11px; color: var(--text-muted); background: var(--warm-gray); padding: 2px 8px; border-radius: 10px; }
+  .sidebar-tip { background: var(--gold-pale); border: 1px solid rgba(200,150,46,0.25); border-radius: 5px; padding: 18px; }
+  .sidebar-tip h4 { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--navy); margin-bottom: 7px; }
+  .sidebar-tip p { font-size: 12.5px; color: var(--text-mid); line-height: 1.6; margin-bottom: 12px; }
+  .sidebar-tip a { display: block; text-align: center; padding: 9px; background: var(--navy); color: var(--white); font-size: 12px; font-weight: 600; border-radius: 3px; text-decoration: none; }
+  .sources-note { font-size: 11px; color: var(--text-muted); line-height: 1.65; padding: 14px 18px; }
+  .sources-note a { color: var(--gold); text-decoration: none; }
+
+  
+  .topic-section.hidden { display: none; }
+  .lead-card.hidden { display: none; }
+  .lead-label.hidden { display: none; }
+
+  /* FOOTER */
+  footer { background: #06172D; padding: 46px 0 26px; }
+  .footer-grid { display: grid; grid-template-columns: 240px 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+    .footer-logo { margin-bottom: 14px; }
+  .footer-logo-img { height: 48px; width: auto; background: white; border-radius: 4px; padding: 4px 10px; display: block; }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.42); line-height: 1.7; }
+  .footer-col h4 { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 9px; }
+  .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.48); text-decoration: none; }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.28); }
+  .footer-social { display: flex; gap: 14px; }
+  .footer-social a { font-size: 12px; color: rgba(255,255,255,0.36); text-decoration: none; }
+  .footer-social a:hover { color: var(--gold); }
+
+  /* ── MOBILE RESPONSIVE ── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: all 0.3s; }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 16px; }
+    .header-inner { padding: 0 16px; height: 142px; }
+    .hamburger { display: block; }
+    nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 12px 16px; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.08); z-index: 200; }
+    nav.open { display: flex; }
+    nav a { padding: 10px 8px; font-size: 14px; border-bottom: 1px solid #f0ede8; }
+    nav a:last-child { border-bottom: none; }
+    nav a.nav-cta { margin-left: 0; margin-top: 6px; text-align: center; }
+    .page-hero-top { flex-direction: column; align-items: flex-start; gap: 8px; padding-bottom: 20px; }
+    .page-hero-left h1 { font-size: 28px; }
+    .filter-inner { gap: 6px; padding: 10px 16px; flex-wrap: wrap; }
+    .filter-link { padding: 7px 14px; font-size: 11px; }
+    .news-grid { grid-template-columns: 1fr; gap: 28px; }
+    .lead-card { grid-template-columns: 1fr; }
+    .lead-img { min-height: 180px; }
+    .lead-body h2 { font-size: 18px; }
+    .lead-body { padding: 20px; }
+    .articles-2col { grid-template-columns: 1fr; }
+    .articles-3col { grid-template-columns: 1fr; }
+    .art-card-img { height: 100px !important; }
+    .art-list-item { padding: 12px 14px; }
+    .art-list-num { font-size: 16px; width: 22px; }
+    .section-head h2 { font-size: 16px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  .alert-bar { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 12px; padding: 8px 0; text-align: center; letter-spacing: 0.02em; }
+  .alert-bar strong { color: var(--gold-light); }
+  .alert-bar a { color: var(--gold-light); text-decoration: none; }
+  .ticker-wrap { background: var(--navy); padding: 9px 0; overflow: hidden; }
+  .ticker-inner { display: flex; align-items: center; gap: 0; }
+  .ticker-badge { background: var(--gold); color: var(--navy); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; padding: 3px 12px; text-transform: uppercase; border-radius: 2px; white-space: nowrap; flex-shrink: 0; margin-left: 24px; z-index: 2; position: relative; }
+  .ticker-badge::after { content: ''; position: absolute; right: -12px; top: 0; bottom: 0; width: 12px; background: linear-gradient(to right, var(--gold), transparent); }
+  .ticker-track { display: flex; gap: 48px; white-space: nowrap; animation: ticker-scroll 40s linear infinite; padding-left: 48px; }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-track a { font-size: 12.5px; color: rgba(255,255,255,0.7); white-space: nowrap; text-decoration: none; transition: color 0.2s; flex-shrink: 0; }
+  .ticker-track a:hover { color: var(--gold-light); }
+  .ticker-track a::before { content: '◆ '; color: var(--gold); font-size: 8px; }
+  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="alert-bar"><!-- ALERT_START -->
+  <strong>Breaking:</strong>&nbsp; Houston ISD moves to expand AI-focused schools to nine campuses &nbsp;·&nbsp;
+  <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Read the story →</a>
+<!-- ALERT_END --></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Superintendent's Corner" class="logo-img">
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="news.html" class="active">News</a>
+      <a href="districts.html">Districts</a>
+      <a href="magazine.html">Magazine</a>
+      <a href="about.html">About</a>
+      <a href="advertise.html" class="nav-cta">Advertise</a>
+    </nav>
+  </div>
+</header>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-badge">Today's Stories</span>
+        <div class="ticker-track">
+      <!-- TICKER_START -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+      <!-- loop duplicate -->
+      <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank">Houston ISD expands AI-focused schools to 9 campuses</a>
+      <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank">Detroit weighs $79.4M infrastructure overhaul</a>
+      <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank">Washington districts push $200M facility bond</a>
+      <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank">Texas safety funding falls short, superintendents say</a>
+      <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank">Congress reintroduces school repair tax credit bill</a>
+          <!-- TICKER_END -->
+    </div>
+  </div>
+</div>
+
+
+
+<!-- PAGE HERO + FILTER BAR -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-top">
+      <div class="page-hero-left">
+        <h1>K-12 Education News</h1>
+        <p>Latest stories from across the country. Sources credited to original publishers. <strong>Updated daily.</strong></p>
+      </div>
+      <div class="hero-date">Wednesday, April 29, 2026</div>
+    </div>
+  </div>
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <button class="filter-link active" data-topic="all" onclick="applyTopicFilter('all', this)">All Stories</button>
+      <button class="filter-link" data-topic="budget" onclick="applyTopicFilter('budget', this)">Budget &amp; Finance</button>
+      <button class="filter-link" data-topic="tech" onclick="applyTopicFilter('tech', this)">Technology &amp; AI</button>
+      <button class="filter-link" data-topic="safety" onclick="applyTopicFilter('safety', this)">School Safety</button>
+      <button class="filter-link" data-topic="policy" onclick="applyTopicFilter('policy', this)">Policy &amp; Legislation</button>
+      <button class="filter-link" data-topic="infra" onclick="applyTopicFilter('infra', this)">Infrastructure</button>
+      <button class="filter-link" data-topic="leadership" onclick="applyTopicFilter('leadership', this)">Leadership</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function applyTopicFilter(filter, clickedBtn) {
+  var links = document.querySelectorAll('.filter-link');
+  for (var i = 0; i < links.length; i++) { links[i].classList.remove('active'); }
+  if (clickedBtn) { clickedBtn.classList.add('active'); }
+  else { for (var i = 0; i < links.length; i++) { if (links[i].getAttribute('data-topic') === filter) links[i].classList.add('active'); } }
+  var leadCard = document.querySelector('.lead-card');
+  var leadLabel = document.querySelector('.lead-label');
+  if (leadCard) leadCard.style.display = (filter === 'all' || filter === 'budget') ? '' : 'none';
+  if (leadLabel) leadLabel.style.display = (filter === 'all' || filter === 'budget') ? '' : 'none';
+  var sections = document.querySelectorAll('.topic-section');
+  for (var i = 0; i < sections.length; i++) {
+    var sec = sections[i].getAttribute('data-section');
+    if (filter === 'all') { sections[i].style.display = ''; }
+    else if (sec === filter || (filter === 'leadership' && sec === 'policy')) { sections[i].style.display = ''; }
+    else { sections[i].style.display = 'none'; }
+  }
+  try { if (filter !== 'all') history.replaceState(null, '', '#' + filter); else history.replaceState(null, '', window.location.pathname); } catch(e) {}
+}
+window.addEventListener('hashchange', function() { var h = window.location.hash.replace('#',''); if (h) applyTopicFilter(h); else applyTopicFilter('all'); });
+(function(){ var h = window.location.hash.replace('#',''); if (h && ['budget','tech','safety','policy','infra','leadership'].indexOf(h) >= 0) applyTopicFilter(h); })();
+</script>
+
+<!-- MAIN CONTENT -->
+<div class="news-layout">
+  <div class="container">
+    <div class="news-grid">
+
+      <!-- LEFT: ARTICLES -->
+      <div>
+
+        <!-- NEWS_ARTICLES_START --><!-- NEWS_ARTICLES_END -->
+        <!-- NEWS_LEAD_START -->
+        <div class="lead-label" data-section="budget">Lead Story</div>
+        <a href="https://www.wweek.com/news/schools/2026/04/28/portland-public-schools-faces-56-million-budget-deficit-as-superintendent-proposes-336-layoffs/" target="_blank" class="lead-card" data-topic="budget">
+          <div class="lead-img" style="background:linear-gradient(145deg,rgba(11,37,69,0.6),rgba(22,54,96,0.7)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&h=500&fit=crop') center/cover;">
+            <div class="lead-img-tag">
+              <span style="background:#7B3F00;color:white;font-size:9px;font-weight:700;letter-spacing:0.14em;padding:4px 10px;border-radius:2px;text-transform:uppercase;">Budget &amp; Finance</span>
+            </div>
+            <div class="lead-img-source">
+              <strong>Willamette Week</strong>
+              <span>April 28, 2026</span>
+            </div>
+          </div>
+          <div class="lead-body">
+            <h2>Portland Public Schools Faces $56 Million Budget Deficit as Superintendent Proposes 336 Layoffs</h2>
+            <p>Superintendent Kimberlee Armstrong presented a budget that would eliminate 336 positions across the district. The $56.3 million shortfall grew from an earlier projection of $50 million, and officials expect a $65 million deficit in 2027-28. Portland has already cut roughly $170 million over the past several years.</p>
+            <div class="lead-meta">
+              <span>Willamette Week</span>
+              <span>&middot;</span>
+              <span>April 28, 2026</span>
+              <span class="lead-read">Read Full Story &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+
+        <div class="topic-section"<!-- NEWS_LEAD_END -->
+
+
+        <div class="topic-section" data-section="budget">
+        <div class="section-head">
+          <h2>Budget &amp; Finance</h2>
+        </div>
+        <div class="section-rule"></div>
+        <div class="articles-3col">
+
+          <!-- SEC_BUDGET_START --><!-- SEC_BUDGET_END -->
+
+          <a href="https://www.opb.org/article/2026/04/29/portland-public-schools-budget-gap-deep-cuts/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Portland Schools Presents $2.77 Billion Budget with Deep Cuts to Schools and Programs</div>
+              <p class="art-excerpt">Oregon's largest school district has been forced to cut roughly $50 million from its budget for the third consecutive year. Rising costs and declining enrollment since 2019 are driving the shortfall, with property tax revenue down $6.5 million from last year.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">OPB &middot; April 29, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://edsource.org/2026/declining-school-enrollment-california/756174" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">California Schools Face Budget Cuts as Enrollment Drops by Nearly 75,000 Students</div>
+              <p class="art-excerpt">California lost nearly 75,000 students this school year. Los Angeles Unified issued 3,200 layoff notices in February, with officials pointing to immigration enforcement and declining birth rates as contributing factors. Elk Grove Unified was the only large district to post enrollment gains.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">EdSource &middot; April 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.the74million.org/article/layoffs-cuts-and-closures-are-coming-to-lausd-schools-as-district-confronts-budget-shortfalls/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Layoffs, Cuts and Closures Are Coming to LAUSD Schools as District Confronts Budget Shortfalls</div>
+              <p class="art-excerpt">LAUSD's chief financial officer said declining enrollment and the end of pandemic relief funds have forced cost-cutting measures. The district plans to save $425 million by recovering unused school funds, $300 million by reducing central office staffing, and $299 million by cutting special funding for high-needs schools.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">The 74 &middot; December 2025</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://signalcleveland.org/cleveland-schools-budget-layoffs-public-school-funding-2026/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1523050854058-8df90110c476?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Cleveland Schools Budget Crisis: Warning Signs to Layoffs</div>
+              <p class="art-excerpt">The Cleveland Metropolitan School District is consolidating dozens of schools and laying off hundreds of employees after losing $157 million in expected funding. The district used pandemic relief money to cover basic operations, and now faces the consequences of that approach ending.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Signal Cleveland &middot; April 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.bostonglobe.com/2026/03/27/metro/lexington-schools-face-layoffs/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Lexington Schools Face Major Cuts Amid Budget Crisis</div>
+              <p class="art-excerpt">Once considered a gold standard for public education in Massachusetts, Lexington is cutting about 65 teacher and staff positions. The cuts come less than six months after voters approved a $660 million new high school project, and some parents say they would have voted differently had they known layoffs were coming.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Boston Globe &middot; March 27, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.philasd.org/blog/2026/03/13/26budgetupdate/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Philadelphia School District Announces $225 Million in Operating Cuts for 2026-27</div>
+              <p class="art-excerpt">The School District of Philadelphia is cutting $225 million in operating costs while protecting teacher positions and the 18 schools recommended for closure. The district faces a $300 million structural deficit from historic underfunding and the loss of federal COVID funds.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">School District of Philadelphia &middot; March 13, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.chalkbeat.org/philadelphia/2026/04/22/teachers-worry-enrollment-based-staff-cuts-will-hurt-sports-art-math/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Philadelphia Educators Worry Budget Cuts Are Worse Than What Officials Are Saying Publicly</div>
+              <p class="art-excerpt">District leaders say 340 school-based jobs are at risk, but principals and teachers say the real number is much higher once enrollment-driven funding reductions are factored in. Schools are already planning for crowded classrooms and fewer programs next year.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Chalkbeat Philadelphia &middot; April 22, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.wfsb.com/2026/04/23/new-britain-school-district-faces-major-budget-cuts-potential-layoffs/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1523050854058-8df90110c476?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">New Britain School District Faces Major Budget Cuts and Potential Layoffs</div>
+              <p class="art-excerpt">More than 45 teachers in New Britain, Connecticut could be laid off and a school could be closed as the district faces an $18.9 million gap. Parents and teachers filled a meeting room to protest the proposals. The superintendent says there is no room to cut without hurting students.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">WFSB &middot; April 23, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.forevercumberland.com/2026/04/30/leaders-with-gallatin-area-school-district-to-discuss-job-cuts/" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Gallatin Area School District Leaders to Discuss Job Cuts</div>
+              <p class="art-excerpt">Albert Gallatin Area School District in Pennsylvania is considering eliminating elementary teachers, middle school math and ELA teachers, a high school math teacher, and operations staff to balance the budget. Superintendent Christopher Pegg says layoffs are the only option.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Forever Cumberland &middot; April 30, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.dailygazette.com/hv360/hv360/news/education/chatham-school-budget-cuts/article_0e54a464-1543-4d69-9adc-3ec0fd96782f.html" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Chatham School District Cuts 5 Positions to Close $855,000 Budget Gap in 2026-27</div>
+              <p class="art-excerpt">The New York district closed a nearly $855,000 gap caused by low state aid, health insurance costs up 11%, and prescription plan premiums up 25%. The district avoided layoffs by eliminating positions through retirements and is studying its facilities for long-term downsizing.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Daily Gazette &middot; April 28, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.inquirer.com/education/bensalem-township-school-district-superintendent-samuel-lee-resignation-20260318.html" target="_blank" class="art-card" data-topic="budget">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(123,63,0,0.55),rgba(123,63,0,0.7)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#7B3F00;">Budget &amp; Finance</span>
+              <div class="art-title">Bensalem Superintendent Resigns as District Faces $12 Million Budget Deficit</div>
+              <p class="art-excerpt">Superintendent Samuel Lee resigned from the Bucks County school district amid severe budget challenges. The board approved a separation agreement with Lee, who had been superintendent since 2015. The financial manager also resigned the same week.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Philadelphia Inquirer &middot; March 18, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+        </div>
+        <div class="topic-section" data-section="tech">
+        <div class="section-head">
+          <h2>Technology &amp; AI</h2>
+        </div>
+        <div class="section-rule"></div>
+        <div class="articles-3col">
+
+          <!-- SEC_TECH_START --><!-- SEC_TECH_END -->
+
+          <a href="https://www.houstonpublicmedia.org/articles/education/2026/04/29/550493/houston-isd-future-2-schools-ai-focus/" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">Houston ISD to Transform Nine Campuses Into AI-Focused Schools</div>
+              <p class="art-excerpt">Superintendent Mike Miles is expanding the Future 2 concept to nine campuses with a $4.5 million budget proposal. All nine schools serve predominantly low-income students and will run on extended hours with dedicated technology labs.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Houston Public Media &middot; April 29, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://projects.chalkbeat.org/2026/ed-tech-marketing-emails-bombard-superintendents/" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">How the Race for School Budget Dollars Starts in a Superintendent's Inbox</div>
+              <p class="art-excerpt">Ed-tech vendors are sending hundreds of unsolicited pitches to superintendents every week. Five district leaders shared what arrives in a single day, revealing an industry with few guardrails chasing shrinking pandemic-era funds.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Chalkbeat &middot; April 29, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.k12dive.com/news/3-trends-that-will-shape-ed-tech-in-2026/810645/" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">3 Trends That Will Shape Ed Tech in 2026</div>
+              <p class="art-excerpt">District ed tech leaders will need to more critically vet AI tools this year, especially around student data privacy. Denver Public Schools invested in MagicSchool AI based on teacher requests, while experts warn that many tools lack transparency about how they train their models.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">K-12 Dive &middot; January 28, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://edtechmagazine.com/k12/article/2026/02/tcea-2026-practical-guidance-ai-preparedness-k-12-education" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">TCEA 2026: Practical Guidance for AI Preparedness in K-12 Education</div>
+              <p class="art-excerpt">At the TCEA conference, district technology leaders shared their real-world processes for vetting AI tools. Duncanville ISD in Texas described a multi-step approval workflow that involves systems engineers, curriculum alignment, budget review, and data privacy agreements for every new tool.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">EdTech Magazine &middot; February 5, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.eschoolnews.com/innovative-teaching/2026/01/01/draft-2026-predictions/" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">49 Predictions About EdTech, Innovation, and AI in 2026</div>
+              <p class="art-excerpt">Education leaders predict 2026 will mark the shift from experimental AI adoption to system-wide integration. District leaders are navigating tighter budgets, shifting enrollment, and rising cybersecurity threats while AI reshapes how students learn and teachers teach.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">eSchool News &middot; January 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.pursuit.us/news/ai-in-education-news-policies-innovations" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">AI in Education News: State Policies and Innovations Tracker</div>
+              <p class="art-excerpt">FutureEd's 2026 tracker is monitoring 52 AI bills across 25 states addressing classroom instruction, with South Carolina proposing some of the strongest protections. Ohio is mandating all districts adopt formal AI policies by July 2026, and Greenville County Schools is already implementing changes.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Pursuit &middot; April 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.rand.org/pubs/research_reports/RRA956-31.html" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">More Districts Are Training Teachers on Artificial Intelligence</div>
+              <p class="art-excerpt">By fall 2024, 67% of low-poverty districts reported training teachers on AI, compared with only 39% of high-poverty districts. Nearly all superintendents interviewed said the primary goal of training was to reduce teacher fear and anxiety about the technology rather than to ban it.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">RAND Corporation &middot; April 2025</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://edcircuit.com/technology-leadership-2026-top-concerns-for-k-12-districts/amp/" target="_blank" class="art-card" data-topic="tech">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(14,74,140,0.55),rgba(14,74,140,0.7)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#0E4A8C;">Technology &amp; AI</span>
+              <div class="art-title">Technology Leadership 2026: Top Concerns Facing K-12 District Tech Teams</div>
+              <p class="art-excerpt">With ESSER funding gone and thousands of pandemic-era devices hitting end-of-life at the same time, district technology leaders are under serious pressure. Cybersecurity, AI governance, and sustainable budgeting are the top challenges heading into the year.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">edCircuit &middot; January 8, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+        </div>
+        <div class="topic-section" data-section="safety">
+        <div class="section-head">
+          <h2>School Safety &amp; Cybersecurity</h2>
+        </div>
+        <div class="section-rule"></div>
+        <div class="articles-3col">
+
+          <!-- SEC_SAFETY_START --><!-- SEC_SAFETY_END -->
+
+          <a href="https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/04/20/texas-school-district-officials-want-more-school-safety-funding-" target="_blank" class="art-card" data-topic="safety">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(139,26,26,0.55),rgba(139,26,26,0.7)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#8B1A1A;">School Safety &amp; Cybersecurity</span>
+              <div class="art-title">Texas Superintendents Say State Safety Funding Mandate Still Doesn't Cover Real Costs</div>
+              <p class="art-excerpt">Northside ISD Superintendent John Craft says per-student safety funding from HB 3 does not cover the cost of armed officers, fencing, vestibules, and door monitoring systems across a district of more than 90,000 students. The district is already running a deficit.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Spectrum Local News &middot; April 21, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://campussecuritytoday.com/articles/2026/04/23/school-safety-budgets-are-growing-are-outcomes-keeping-up.aspx" target="_blank" class="art-card" data-topic="safety">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(139,26,26,0.55),rgba(139,26,26,0.7)),url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#8B1A1A;">School Safety &amp; Cybersecurity</span>
+              <div class="art-title">School Safety Budgets Are Growing. But Are the Outcomes Actually Keeping Up?</div>
+              <p class="art-excerpt">Michigan committed $321 million in school safety grants after the Oxford High School shooting. But campus security experts warn that buying more hardware does not fix integration failures between systems, and that spending without proper assessment leaves real gaps in place.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Campus Security Today &middot; April 23, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.edweek.org/technology/a-potential-breach-of-an-anonymous-tip-app-could-have-exposed-sensitive-student-data/2026/03" target="_blank" class="art-card" data-topic="safety">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(139,26,26,0.55),rgba(139,26,26,0.7)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#8B1A1A;">School Safety &amp; Cybersecurity</span>
+              <div class="art-title">A Potential Breach of an Anonymous Tip App Could Have Exposed Sensitive Student Data</div>
+              <p class="art-excerpt">A hacker claimed to have accessed systems operated by Navigate360, a school safety platform used by more than 30,000 schools. Cybersecurity experts say schools should take immediate steps to protect student data rather than waiting for official confirmation of the breach.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Education Week &middot; March 23, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://cyberscoop.com/maps360-student-data-breach-senate-investigation/" target="_blank" class="art-card" data-topic="safety">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(139,26,26,0.55),rgba(139,26,26,0.7)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#8B1A1A;">School Safety &amp; Cybersecurity</span>
+              <div class="art-title">Senators Seek Answers About Hackers Obtaining Sensitive Student Data from School Tip Line</div>
+              <p class="art-excerpt">A bipartisan pair of senators sent a letter to Navigate360 demanding answers about the breach of its P3 Global Intel school tip line. The letter raises concerns that compromised anonymity could discourage students from reporting safety concerns. 82% of K-12 schools experienced a cyber incident between July 2023 and December 2024.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">CyberScoop &middot; April 27, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.k12six.org/k12-cybersecurity-insider/20264-9-s23xt" target="_blank" class="art-card" data-topic="safety">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(139,26,26,0.55),rgba(139,26,26,0.7)),url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#8B1A1A;">School Safety &amp; Cybersecurity</span>
+              <div class="art-title">K-12 Cybersecurity Insider: The Drumbeat of Incidents Continues</div>
+              <p class="art-excerpt">Alamo Heights ISD in Texas experienced wide-scale internet outages during a ransomware recovery. The LA County Office of Education is investigating fraudulent tax filings submitted using employee data. K12 SIX published updated cybersecurity protections for 2026.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">K12 SIX &middot; April 20, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://udtonline.com/how-schools-can-strengthen-cybersecurity-in-2026/" target="_blank" class="art-card" data-topic="safety">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(139,26,26,0.55),rgba(139,26,26,0.7)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#8B1A1A;">School Safety &amp; Cybersecurity</span>
+              <div class="art-title">K12 Cybersecurity 2026: How Schools Can Strengthen Defenses Against Escalating Threats</div>
+              <p class="art-excerpt">K-12 institutions experienced a 92% increase in ransomware attacks in 2024. Schools face a 95-98% probability of suffering an email phishing attack within the next 18 months. Only 5% of students have multi-factor authentication enabled compared to 90% of teachers.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">UDT &middot; February 16, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.cybernut.com/blog/preparing-for-2026-emerging-cyber-threats-every-k12-district-should-watch" target="_blank" class="art-card" data-topic="safety">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(139,26,26,0.55),rgba(139,26,26,0.7)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#8B1A1A;">School Safety &amp; Cybersecurity</span>
+              <div class="art-title">K-12 Cybersecurity: Preparing for Emerging Threats in 2026</div>
+              <p class="art-excerpt">82% of K-12 institutions reported cyber threat impacts, with recovery costs ranging from $50,000 to over $9 million. Baltimore County Schools spent $9.5 million recovering from a single attack. Only 5% of students have multi-factor authentication, compared to 90% of teachers.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">CyberNut &middot; November 2025</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+        </div>
+        <div class="topic-section" data-section="leader">
+        <div class="section-head">
+          <h2>Leadership &amp; Staffing</h2>
+        </div>
+        <div class="section-rule"></div>
+        <div class="articles-3col">
+
+          <!-- SEC_LEADER_START --><!-- SEC_LEADER_END -->
+
+          <a href="https://www.wfaa.com/article/news/education/superintendent-shuffle-north-texas-superintendents-leaving-school-district-this-year/287-29ce1a70-1517-4cee-a0b2-82dae68684ad" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Superintendent Shuffle: All of the North Texas Superintendents Leaving Their Districts This Year</div>
+              <p class="art-excerpt">In the span of just a few days, four North Texas superintendents announced resignations, including leaders at Frisco ISD, Allen ISD, DeSoto ISD, and Fort Worth ISD. Several departures are tied to retirements, while others follow state takeover actions.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">WFAA &middot; March 16, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.keranews.org/education/2026-04-24/best-days-are-ahead-appointed-takeover-leaders-promise-academic-gains-in-lake-worth-isd" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Appointed Takeover Leaders Promise Academic Gains in Lake Worth ISD</div>
+              <p class="art-excerpt">New Superintendent Ena Meyers and five state-appointed board managers now lead the 3,200-student district following years of low academic performance. The former superintendent resigned in March, less than a year after being hired. The new board's first priority is student outcomes.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">KERA News &middot; April 24, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.abridged.org/news/sacramento-city-unified-superintendent-resigns-abruptly-amid-sinking-budget-situation/" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Sacramento City Unified Superintendent Resigns Abruptly Amid Budget Crisis</div>
+              <p class="art-excerpt">Superintendent Lisa Allen announced her resignation on what would be her last day. The district faces a multi-million-dollar budget crisis and the threat of state takeover. The chief human resources officer was named acting superintendent the same evening.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Abridged &middot; February 6, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.12news.com/article/news/local/valley/cartwright-school-district-superintendent-steve-watson-resigns-phoenix-arizona/75-37ee124e-eec2-4a45-9331-1d37c907bd12" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Cartwright School District Acting Superintendent Resigns Immediately</div>
+              <p class="art-excerpt">Steve Watson stepped down during a governing board meeting, just over a year after taking over the role. He highlighted accomplishments including balancing the budget and securing teacher raises before announcing his departure was effective immediately.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">12 News &middot; April 8, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://cbsaustin.com/news/local/chris-clark-officially-named-leander-isd-superintendent-effective-immediately" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Chris Clark Officially Named Leander ISD Superintendent</div>
+              <p class="art-excerpt">The Board of Trustees finalized the hire after a 21-day waiting period. Clark has served as acting superintendent since December 2025 and brings more than 30 years of experience in public education. The district serves over 42,000 students across 49 schools.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">CBS Austin &middot; April 2, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.nbcdfw.com/news/local/grapevine-colleyville-isd-superintendent-resigns-amid-district-budget-issues/3947696/" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Grapevine-Colleyville ISD Superintendent Resigns to Run Regional Education Center</div>
+              <p class="art-excerpt">Superintendent Schnautz accepted a new role leading the Region 11 Education Service Center in Fort Worth. His departure comes as the district faces budget issues and declining enrollment down 12% since 2019, which could lead to elementary school closures.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">NBC DFW &middot; November 21, 2025</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.idahoednews.org/news/superintendent-shuffle-kuna-caldwell-hire-search-services/" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Superintendent Shuffle: Idaho Districts Begin to Make Hiring Decisions</div>
+              <p class="art-excerpt">Multiple Idaho school districts are filling superintendent vacancies after a wave of resignations and retirements. Some districts are hiring from within, while others are using the Idaho School Board Association's search services. Two districts are navigating deconsolidation at the same time.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Idaho Ed News &middot; April 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.yankton.net/community/article_727f381c-8d80-4adc-8c8d-fa1823495636.html" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Menno School District Undergoes Abrupt Leadership Change</div>
+              <p class="art-excerpt">Superintendent Steve Helgeland resigned after the board voted to terminate his contract, citing a difference of opinion on the direction of the district. The current principal was named to take over the role and has already been hired permanently for next year.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Yankton Press & Dakotan &middot; April 29, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://edustaff.org/blog/teacher-shortages-in-2025-what-the-data-revealed-and-what-2026-will-demand/" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Teacher Shortages in 2025: What the Data Revealed and What 2026 Will Demand</div>
+              <p class="art-excerpt">Over 411,000 teaching positions nationwide are either vacant or staffed by under-certified educators, roughly one in eight positions. Teacher preparation program enrollment dropped sharply after the Great Recession and has not recovered, while attrition accounts for 90% of annual demand.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Edustaff &middot; February 3, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.publicschoolreview.com/blog/teacher-shortage-solutions-that-are-working-in-2026" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">Teacher Shortage Solutions That Are Working in 2026</div>
+              <p class="art-excerpt">Districts are making progress with grow-your-own teacher programs, alternative certification pathways, and teacher residency models. Research shows residency-trained teachers are more likely to stay in the profession beyond five years. Tennessee's program achieves 75% retention at the five-year mark.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Public School Review &middot; April 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.k12dive.com/news/what-do-enrollment-declines-mean-for-teacher-shortages/758664/" target="_blank" class="art-card" data-topic="leader">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(90,74,0,0.55),rgba(90,74,0,0.7)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#5A4A00;">Leadership &amp; Staffing</span>
+              <div class="art-title">What Do Enrollment Declines Mean for Teacher Shortages?</div>
+              <p class="art-excerpt">During COVID, districts hired more teachers despite declining enrollment using federal relief dollars. Now those funds are gone, and districts are laying off staff while still struggling to fill math, science, and special education positions. One Arizona district's grow-your-own program has retained 95% of its graduates.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">K-12 Dive &middot; August 29, 2025</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+        </div>
+        <div class="topic-section" data-section="infra">
+        <div class="section-head">
+          <h2>Infrastructure &amp; Bonds</h2>
+        </div>
+        <div class="section-rule"></div>
+        <div class="articles-3col">
+
+          <!-- SEC_INFRA_START --><!-- SEC_INFRA_END -->
+
+          <a href="https://www.chalkbeat.org/detroit/2026/02/02/detroit-school-district-floats-79-million-dollar-plan-for-infrastructure/" target="_blank" class="art-card" data-topic="infra">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(58,42,122,0.55),rgba(58,42,122,0.7)),url('https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#3A2A7A;">Infrastructure &amp; Bonds</span>
+              <div class="art-title">Detroit District Weighs $79.4 Million Plan for Infrastructure Improvements</div>
+              <p class="art-excerpt">Detroit Public Schools Community District is considering using surplus funds to demolish 11 vacant buildings, build an athletic complex, repave 36 parking lots, and improve security fencing at 28 schools. The superintendent says it still is not a substitute for fair state funding.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Chalkbeat Detroit &middot; February 2, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://kxly920.com/2026/04/28/washington-school-districts-seek-voter-approval-for-major-facility-funding/" target="_blank" class="art-card" data-topic="infra">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(58,42,122,0.55),rgba(58,42,122,0.7)),url('https://images.unsplash.com/photo-1523050854058-8df90110c476?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#3A2A7A;">Infrastructure &amp; Bonds</span>
+              <div class="art-title">Washington School Districts Push Again for $200 Million Facility Bond</div>
+              <p class="art-excerpt">East Valley School District is asking voters to approve a $200 million bond to replace its aging high school and middle school. A February vote got a majority but missed the 60% supermajority required under Washington state law.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">KXLY News &middot; April 28, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.keranews.org/education/2026-04-20/2026-school-bond-elections-dallas-isd" target="_blank" class="art-card" data-topic="infra">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(58,42,122,0.55),rgba(58,42,122,0.7)),url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#3A2A7A;">Infrastructure &amp; Bonds</span>
+              <div class="art-title">2026 School Bond Elections Include Texas' Largest Ever. Here's What's in Them</div>
+              <p class="art-excerpt">Dallas ISD is proposing one of the largest school bond packages in Texas history. Arlington ISD is floating a $501 million package, and Lancaster ISD has a $376 million proposal. The bonds would fund new schools, technology upgrades, CTE centers, and safety improvements.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">KERA News &middot; April 20, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://meteoreducation.com/the-82-billion-opportunity-what-the-k-12-bond-surge-means-for-learning-environments-in-2026/" target="_blank" class="art-card" data-topic="infra">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(58,42,122,0.55),rgba(58,42,122,0.7)),url('https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#3A2A7A;">Infrastructure &amp; Bonds</span>
+              <div class="art-title">The $82 Billion K-12 Bond Surge: What It Means for Learning Environments in 2026</div>
+              <p class="art-excerpt">Schools issued $82 billion in bonds in 2025, the highest level in over a decade. With 38% of school buildings constructed before 1970, districts are racing to modernize facilities designed for lecture-based teaching. CTE enrollment has surged to more than 8 million students.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Meteor Education &middot; February 12, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://evans.house.gov/media/press-releases/evans-reintroduces-school-repair-bill" target="_blank" class="art-card" data-topic="infra">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(58,42,122,0.55),rgba(58,42,122,0.7)),url('https://images.unsplash.com/photo-1523050854058-8df90110c476?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#3A2A7A;">Infrastructure &amp; Bonds</span>
+              <div class="art-title">Congressman Reintroduces Bill to Finance Public School Repairs via Federal Tax Code</div>
+              <p class="art-excerpt">Rep. Dwight Evans (D-PA) is pushing to let aging public school buildings qualify for the federal historic rehabilitation tax credit. The estimated annual funding gap for school infrastructure is $85 billion, with progress described as uneven nationwide.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">House.gov &middot; April 27, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.keranews.org/education/2026-04-20/2026-school-bond-elections-dallas-isd" target="_blank" class="art-card" data-topic="infra">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(58,42,122,0.55),rgba(58,42,122,0.7)),url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#3A2A7A;">Infrastructure &amp; Bonds</span>
+              <div class="art-title">Dallas ISD Proposes One of the Largest School Bond Packages in Texas History</div>
+              <p class="art-excerpt">Dallas ISD is proposing a massive bond package to build new schools, add technology, and modernize safety and security. Arlington ISD has a separate $501 million proposal, and Lancaster ISD is seeking $376 million for a new CTE center and campus upgrades across every school.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">KERA News &middot; April 20, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+        </div>
+        <div class="topic-section" data-section="policy">
+        <div class="section-head">
+          <h2>Policy &amp; Legislation</h2>
+        </div>
+        <div class="section-rule"></div>
+        <div class="articles-3col">
+
+          <!-- SEC_POLICY_START --><!-- SEC_POLICY_END -->
+
+          <a href="https://billypenn.com/2026/04/21/philadelphia-school-closure-watlington-city-council/" target="_blank" class="art-card" data-topic="policy">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(42,92,63,0.55),rgba(42,92,63,0.7)),url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#2A5C3F;">Policy &amp; Legislation</span>
+              <div class="art-title">Philadelphia City Council and School District Clash Over Plan to Close 17 Schools</div>
+              <p class="art-excerpt">City Council members are pushing back against the superintendent's proposal to close 17 schools. The plan is part of a broader effort to address the district's $300 million structural deficit. Community members and elected officials want more input before closures are finalized.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Billy Penn &middot; April 21, 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://edtechmagazine.com/k12/article/2025/11/k-12-districts-anticipate-new-challenges-and-priorities-2026" target="_blank" class="art-card" data-topic="policy">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(42,92,63,0.55),rgba(42,92,63,0.7)),url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#2A5C3F;">Policy &amp; Legislation</span>
+              <div class="art-title">K-12 Districts Heading Into 2026 Are Dealing With Funding Gaps, AI Questions, and No Easy Answers</div>
+              <p class="art-excerpt">With ESSER funding gone and AI adoption accelerating, districts face overlapping challenges heading into 2026. Leaders are grappling with how to fund technology investments, protect student data, and maintain programs that were previously covered by pandemic relief dollars.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">EdTech Magazine &middot; December 2025</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+          <a href="https://www.pursuit.us/news/ai-in-education-news-policies-innovations" target="_blank" class="art-card" data-topic="policy">
+            <div class="art-card-img" style="height:120px;background:linear-gradient(rgba(42,92,63,0.55),rgba(42,92,63,0.7)),url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500&h=240&fit=crop') center/cover;"></div>
+            <div class="art-card-body">
+              <span class="art-tag" style="color:#2A5C3F;">Policy &amp; Legislation</span>
+              <div class="art-title">AI Education Policy Tracker: 52 Bills Across 25 States</div>
+              <p class="art-excerpt">FutureEd is tracking 52 state-level bills addressing AI in classrooms. South Carolina's H.B. 5253 would require written parental consent for AI tools and ban AI from replacing licensed teachers. Oklahoma's bill would require all districts to adopt written AI policies before 2027-28.</p>
+            </div>
+            <div class="art-footer">
+              <span class="art-source">Pursuit / FutureEd &middot; April 2026</span>
+              <span class="art-link">Read &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+
+        <div class="newsletter-widget">
+          <h3>Stay Informed</h3>
+          <p>K-12 news and district spotlights, delivered twice a month. No fluff.</p>
+          <input type="email" placeholder="Your email address">
+          <button>Subscribe to the Corner →</button>
+        </div>
+
+        <div class="sidebar-tip">
+          <h4>Nominate a District</h4>
+          <p>Superintendent's Corner produces in-depth profiles of school districts across the country. If your district has a story worth telling, reach out and we will be in touch.</p>
+          <a href="mailto:districts@superintendentscorner.com">Get in Touch →</a>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-head"><h3>Browse by Topic</h3></div>
+          <ul class="topic-list">
+            <li>
+              <a href="news.html"><div class="topic-dot" style="background:#7B3F00;"></div>Budget &amp; Finance</a>
+              <span class="topic-count">4</span>
+            </li>
+            <li>
+              <a href="news.html"><div class="topic-dot" style="background:#0E4A8C;"></div>Technology &amp; AI</a>
+              <span class="topic-count">3</span>
+            </li>
+            <li>
+              <a href="news.html"><div class="topic-dot" style="background:#8B1A1A;"></div>School Safety</a>
+              <span class="topic-count">2</span>
+            </li>
+            <li>
+              <a href="news.html"><div class="topic-dot" style="background:#2A5C3F;"></div>Policy &amp; Legislation</a>
+              <span class="topic-count">2</span>
+            </li>
+            <li>
+              <a href="news.html"><div class="topic-dot" style="background:#3A2A7A;"></div>Infrastructure</a>
+              <span class="topic-count">2</span>
+            </li>
+            <li>
+              <a href="news.html"><div class="topic-dot" style="background:#5A4A00;"></div>Leadership</a>
+              <span class="topic-count">2</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-head"><h3>About Our News Coverage</h3></div>
+          <p class="sources-note">All stories on this page are sourced from and credited to their original publishers. We summarize and link directly to the full article. We do not reproduce original journalism. Sources include <a href="https://chalkbeat.org" target="_blank">Chalkbeat</a>, <a href="https://edsource.org" target="_blank">EdSource</a>, <a href="https://edtechmagazine.com" target="_blank">EdTech Magazine</a>, OPB, Willamette Week, and local public media outlets across the country.</p>
+        </div>
+
+      
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Superintendent's Corner" class="footer-logo-img">
+        </div>
+        </div>
+        <p>The premier digital platform spotlighting the people, programs, and partners driving public education forward across the United States.</p>
+      </div>
+      <div class="footer-col">
+        <h4>News</h4>
+        <ul>
+          <li><a href="news.html#tech">Technology &amp; AI</a></li>
+          <li><a href="news.html#infra">Infrastructure</a></li>
+          <li><a href="news.html#safety">School Safety</a></li>
+          <li><a href="news.html#budget">Budget &amp; Finance</a></li>
+          <li><a href="news.html#policy">Policy &amp; Legislation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Work With Us</h4>
+        <ul>
+          <li><a href="mailto:districts@superintendentscorner.com">Nominate a District</a></li>
+          <li><a href="advertise.html">Advertising Options</a></li>
+          <li><a href="mailto:advertise@superintendentscorner.com">Media Kit</a></li>
+          <li><a href="advertise.html">Supplier FAQ</a></li>
+          <li><a href="about.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Editorial Standards</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Superintendent's Corner · superintendentscorner.com · All Rights Reserved</p>
+      <div class="footer-social">
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter / X</a>
+        <a href="mailto:info@superintendentscorner.com">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
